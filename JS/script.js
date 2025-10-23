@@ -10,15 +10,16 @@ let isOpen = false;
 // Definimos evento click sobr eel botón del menú
 burger. addEventListener("click", function(){
 
+    let isOpen = menu_opt.classList.contains("menu-show")
+
     if (isOpen === false) {
 
-            menu_opt.style.right = "0";
-            isOpen = true;
+        menu_opt.classList.add("menu-show");
+           
 
     } else {
 
-        menu_opt.style.right = "-100%";
-        isOpen = false;
+        menu_opt.classList.remove("menu-show");
 
     }
 
