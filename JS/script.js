@@ -44,11 +44,27 @@ btnSwitchMode.addEventListener("click", function() {
     to_dark_mode.classList.toggle("hide-cont");
     to_light_mode.classList.toggle("hide-cont");
 
-
-
-
-    
-
 });
 
+// Lógica abrir/cerrar de la ventana modal
+let btnOpenModel = document.querySelector("#openModal");
 
+btnOpenModel.addEventListener("click", openModalWindow);
+
+// Función propia para abrir ventanal modal
+function openModalWindow() {
+    let ModalWindow = document.querySelector("modalWindow");
+    modalWindow.classList.add("show-modal");
+
+}
+
+// --- Modal ---
+const modal = document.querySelector("#modalWindow");
+const openBtn = document.querySelector("#openModal");
+const closeBtn = document.querySelector("#modalWindow .close");
+
+
+// Abrir y cerrar modal
+openBtn.onclick = () => modal.classList.add("show-modal");
+closeBtn.onclick = () => modal.classList.remove("show-modal");
+window.onclick = e => e.target === modal && modal.classList.remove("show-modal");
