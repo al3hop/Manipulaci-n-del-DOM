@@ -8,19 +8,10 @@ let menu_opt = document.querySelector(".menu");
 let isOpen = false;
 
 // Definimos evento click sobr eel botón del menú
-burger. addEventListener("click", function(){
+burger.addEventListener("click", function(){
 
-    let isOpen = menu_opt.classList.contains("menu-show")
-
-    if (isOpen === false) {
-
-        menu_opt.classList.add("menu-show");
-           
-
-    } else {
-
-        menu_opt.classList.remove("menu-show");
-
-    }
+    burger.classList.toggle("fa-bars");
+    burger.classList.toggle("fa-times");
+    menu_opt.classList.toggle("menu-show");
 
 });
