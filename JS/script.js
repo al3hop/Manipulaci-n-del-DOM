@@ -68,3 +68,27 @@ const closeBtn = document.querySelector("#modalWindow .close");
 openBtn.onclick = () => modal.classList.add("show-modal");
 closeBtn.onclick = () => modal.classList.remove("show-modal");
 window.onclick = e => e.target === modal && modal.classList.remove("show-modal");
+
+
+let btnCloseModaL = document.querySelector("#modalWindow > .modal-content > .close");
+let btnCloseModalAccept = document.querySelector("#modalWindow > .modal-content > #closeModalAccept");
+
+btnCloseModaL.addEventListener("click", closeModalWindow);
+
+// Función para cerrar ventana modal
+function closeModalWindow() {
+    let ModalWindow = document.querySelector("modalWindow");
+    modalWindow.classList.remove("show-modal");
+}
+
+// Cerrar ventana modal cuando se detecta click fuera
+window.addEventListener("click", function(event) {
+    console.log("has hecho click en la web");
+    console.log(event);
+    
+    //llama solo a la función de cerrar modal siempre que el click no sea en la propia ventana modal
+    let modalWindow = this.document.querySelector("#modalwindow")
+
+    if (event.target == modal)
+        closeModalWindow();
+});
